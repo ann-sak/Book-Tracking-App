@@ -5,7 +5,7 @@ class Shelf extends Component {
     const {book, UpdateShelf, presentShelf} = this.props
 
     return(
-      <div>
+      <div className="book-item">
         <div
           className="book-cover"
           style={{
@@ -14,9 +14,7 @@ class Shelf extends Component {
             backgroundImage: book.imageLinks ? (`url(${book.imageLinks.thumbnail})`) : (`url(https://dummyimage.com/128x170/4f4f4f/ffffff.jpg&text=No+Book+Art)`)
           }}
         />
-        <div>{book.title}</div>
-        <div>{book.authors}</div>
-        <div>
+        <div className="shelf-changing">
           <select
             onChange = {(event) => UpdateShelf (
               book, event.target.value
@@ -30,6 +28,9 @@ class Shelf extends Component {
               <option value="none">None</option>
           </select>
         </div>
+        <div className="books-title">{book.title}</div>
+        <div className="books-authors">{book.authors}</div>
+
       </div>
     )
   }

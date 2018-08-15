@@ -32,22 +32,25 @@ class Search extends Component {
         <div>
           <Link
             to="/"
+            className="close-search"
           >
             Close
           </Link>
-          <input
-            type = "text"
-            onChange = {event =>
-              this.searchQuery(event.target.value)
-            }
-            placeholder = "Search"
-            value = {query}
+          <div className="search-input">
+            <input
+              type = "text"
+              onChange = {event =>
+                this.searchQuery(event.target.value)
+              }
+              placeholder = "Search"
+              value = {query}
 
-            />
+              />
+            </div>
           </div>
 
           <div>
-            <ol>
+            <ol className="books-list">
               {searched.map(search => {
                 let shelf = 'none'
                   books.map (book => {
