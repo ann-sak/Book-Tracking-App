@@ -8,6 +8,7 @@
 
 # production
 /build
+./mapbox
 
 # misc
 .DS_Store
