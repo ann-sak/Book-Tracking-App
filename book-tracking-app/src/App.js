@@ -8,9 +8,16 @@ import * as BooksAPI from './components/BooksApi.js'
 
 class App extends Component {
   state = {
-      books: []
+      books: [],
   }
 
+  UpdateShelf = (book, shelf) => {
+    BooksAPI.update(book, shelf)
+
+    BooksAPI.getAll().then((books) => {
+       this.setState({books})
+     })
+  }
   //getting books from BooksAPI and put them to the state
   componentDidMount() {
       BooksAPI.getAll().then(books => {
@@ -18,9 +25,7 @@ class App extends Component {
       })
   }
 
-  updateShelf = (book, shelf) => {
-    BooksAPI.update(book, shelf)
-  }
+
 
 
   render() {
@@ -28,7 +33,7 @@ class App extends Component {
       <div className="App">
         <Search />
         <Books
-          updateShelf={this.updateShelf}
+          UpdateShelf={this.UpdateShelf}
           books={this.state.books}
         />
       </div>

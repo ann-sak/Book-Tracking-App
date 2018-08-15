@@ -3,7 +3,7 @@ import Shelf from './Shelf.js'
 
 class Books extends Component {
   render () {
-    const {books, updateShelf} = this.props
+    const {books, UpdateShelf} = this.props
 
     return (
       <div>
@@ -16,6 +16,7 @@ class Books extends Component {
                 book.shelf === 'currentlyReading').map(book => (
                   <li key={book.id}>
                     <Shelf
+                      UpdateShelf={UpdateShelf}
                       book={book}
                     />
                   </li>
@@ -30,7 +31,9 @@ class Books extends Component {
                 book.shelf === 'wantToRead').map(book => (
                   <li key={book.id}>
                     <Shelf
+                      UpdateShelf={UpdateShelf}
                       book={book}
+
                     />
                   </li>
               ))}
@@ -44,6 +47,7 @@ class Books extends Component {
               book.shelf === 'read').map(book => (
                 <li key={book.id}>
                   <Shelf
+                    UpdateShelf={UpdateShelf}
                     book={book}
                   />
                 </li>
