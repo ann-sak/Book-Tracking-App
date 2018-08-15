@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Shelf extends Component {
   render () {
-    const {book, UpdateShelf} = this.props
+    const {book, UpdateShelf, presentShelf} = this.props
 
     return(
       <div>
@@ -21,7 +21,7 @@ class Shelf extends Component {
             onChange = {(event) => UpdateShelf (
               book, event.target.value
             )}
-            value={book.shelf}
+            value={presentShelf}
           >
               <option disabled>Move to...</option>
               <option value="currentlyReading">Currently Reading</option>

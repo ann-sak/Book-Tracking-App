@@ -31,10 +31,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Search />
+        <Search
+          UpdateShelf = {this.UpdateShelf}
+          books = {this.state.books}
+        />
         <Books
-          UpdateShelf={this.UpdateShelf}
-          books={this.state.books}
+          UpdateShelf = {this.UpdateShelf}
+          books = {this.state.books}
         />
       </div>
     );
