@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Shelf from './Shelf.js'
+import { Link } from 'react-router-dom'
 
 class Books extends Component {
   render () {
@@ -7,6 +8,7 @@ class Books extends Component {
 
     return (
       <div>
+
         <h1> My Books</h1>
 
         <div>
@@ -54,7 +56,11 @@ class Books extends Component {
             ))}
           </ol>
         </div>
-
+        <Link
+          to = "/search"
+        >
+          Search for a book
+        </Link>
       </div>
     )
   }

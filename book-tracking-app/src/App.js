@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Route } from 'react-router-dom'
 import './App.css';
 import Search from './components/Search.js'
 import Books from './components/Books.js'
@@ -25,20 +25,22 @@ class App extends Component {
       })
   }
 
-
-
-
   render() {
     return (
       <div className="App">
-        <Search
-          UpdateShelf = {this.UpdateShelf}
-          books = {this.state.books}
-        />
-        <Books
-          UpdateShelf = {this.UpdateShelf}
-          books = {this.state.books}
-        />
+        <Route exact path='/' render = {() => (
+          <Books
+            UpdateShelf = {this.UpdateShelf}
+            books = {this.state.books}
+          />
+        )}/>
+
+        <Route exact path='/search' render = {() => (
+          <Search
+            UpdateShelf = {this.UpdateShelf}
+            books = {this.state.books}
+          />
+        )}/>
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import * as BooksAPI from './BooksApi.js'
 import Shelf from './Shelf.js'
+import { Link } from 'react-router-dom'
 
 class Search extends Component {
   state = {
@@ -29,6 +30,11 @@ class Search extends Component {
     return (
       <div>
         <div>
+          <Link
+            to="/"
+          >
+            Close
+          </Link>
           <input
             type = "text"
             onChange = {event =>
@@ -45,8 +51,9 @@ class Search extends Component {
               {searched.map(search => {
                 let shelf = 'none'
                   books.map (book => {
-                    if (book.id === search.id) {return shelf = book.shelf}
-                     else {
+                    if (book.id === search.id) {
+                      return shelf = book.shelf
+                    } else {
                       return ''
                     }
                   })
