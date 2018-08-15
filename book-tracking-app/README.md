@@ -1,6 +1,6 @@
 ## Books Tracking App
 
-This is the App built for the Google Developer Nanodegree Scholarship with create-react-app
+This is the App built for the Google Developer Nanodegree Scholarship with `create-react-app`
 
 ## Installation
 - Clone the repo
@@ -11,4 +11,4 @@ This is the App built for the Google Developer Nanodegree Scholarship with creat
 You have three shelves of books 'Currently Reading', 'Want to Read' and 'Read'.
 For every book you can choose your own shelf by clicking the arrow-down icon.
 To search you own books, click the magnifying glass icon.
-At the search result page you also choose you shelf for every book.
+At the search result page you can also choose your shelf for every book.
