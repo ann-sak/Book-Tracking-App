@@ -11,11 +11,13 @@ class Shelf extends Component {
           style={{
             width: 128,
             height: 170,
+            //setting the thumbnail cover if there is no image for the cover
             backgroundImage: book.imageLinks ? (`url(${book.imageLinks.thumbnail})`) : (`url(https://dummyimage.com/128x170/4f4f4f/ffffff.jpg&text=No+Book+Art)`)
           }}
         />
         <div className="shelf-changing">
           <select
+            //changing the shelf
             onChange = {(event) => UpdateShelf (
               book, event.target.value
             )}

@@ -5,10 +5,13 @@ import { Link } from 'react-router-dom'
 
 class Search extends Component {
   state = {
+    //initial query
     query: '',
+    //array with the searched books
     searched: []
   }
 
+  //updating searched array
   searchQuery = (query) => {
       this.setState({query})
       if (query !== '') {
@@ -27,9 +30,10 @@ class Search extends Component {
   render () {
     const {query, searched} = this.state
     const {UpdateShelf, books} = this.props
+
     return (
       <div>
-        <div>
+          {/*Link to cleose the search page*/}
           <Link
             to="/"
             className="close-search"
@@ -39,22 +43,26 @@ class Search extends Component {
           <div className="search-input">
             <input
               type = "text"
+              placeholder = "Search for a book..."
               onChange = {event =>
+                //changing the query
                 this.searchQuery(event.target.value)
               }
-              placeholder = "Search"
               value = {query}
 
               />
             </div>
-          </div>
 
           <div>
             <ol className="books-list">
+              {/* looping through the searched array*/}
               {searched.map(search => {
                 let shelf = 'none'
+                  //looping through the books array
                   books.map (book => {
+                    //if the book is the same like the searched one...
                     if (book.id === search.id) {
+                      //set the same shelf
                       return shelf = book.shelf
                     } else {
                       return ''
