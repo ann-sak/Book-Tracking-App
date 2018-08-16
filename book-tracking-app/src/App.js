@@ -14,11 +14,15 @@ class App extends Component {
 
   //update() function comes with BooksAPI
   UpdateShelf = (book, shelf) => {
-    BooksAPI.update(book, shelf);
+    BooksAPI.update(book, shelf)
+    .then(() => {
+      book.shelf = shelf
+      this.setState(state => ({
+        books: state.books.filter(b => b.id !== book.id).concat(book)
+      }))
+    })
 
-    BooksAPI.getAll().then((books) => {
-       this.setState({books})
-     })
+    
   }
   //getting books from BooksAPI and put them to the state
   componentDidMount() {
